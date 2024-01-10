@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 import java.io.FileNotFoundException;
 import java.util.Random;
 import java.util.Scanner;
@@ -82,6 +84,7 @@ public class Main {
             System.out.println("The opposing trainer sent out " + OPokemon[0]);
             TimeUnit.SECONDS.sleep(1);
 
+
             while (chances >= 0 && rivalchances >= 0){
                 String[] currentmove = null;
                 Scanner scan = new Scanner (System.in);
@@ -117,7 +120,7 @@ public class Main {
 
                         double num = damagecalc(currentmove, level, OPokemon[1], OPokemon[2], true, Pokemon, false);
                         num = Math.floor(num);
-                        ohp -= num;
+                        ohp -= (int) num;
                         TimeUnit.SECONDS.sleep(1);
 
                     }
@@ -139,6 +142,7 @@ public class Main {
                         Omovelist = Moveselection(moves, OPokemon);
 
                         Ostatconfig(OPokemon, Olevel);
+                        System.out.println("The opposing trainer sent in " + OPokemon[0]);
 
 
                     }
@@ -175,7 +179,7 @@ public class Main {
                             System.out.println("The opposing " + OPokemon[0] + " used "+ Ocurrentmove[0]);
 
                             double odamage = damagecalc(Ocurrentmove, Olevel, Pokemon[1], Pokemon[2], false, OPokemon, false);
-                            hp -= Math.floor(odamage);
+                            hp -= (int) Math.floor(odamage);
                             TimeUnit.SECONDS.sleep(1);
 
                         }
@@ -231,7 +235,7 @@ public class Main {
                         System.out.println("The opposing " + OPokemon[0] + " used "+ Ocurrentmove[0]);
 
                         double odamage = damagecalc(Ocurrentmove, Olevel, Pokemon[1], Pokemon[2], false, OPokemon, false);
-                        hp -= Math.floor(odamage);
+                        hp -= (int) Math.floor(odamage);
                         TimeUnit.SECONDS.sleep(1);
 
                     }
@@ -276,7 +280,7 @@ public class Main {
 
                         TimeUnit.SECONDS.sleep(1);
 
-                        System.out.println("The opposing trainer sent out" + OPokemon);
+                        System.out.println("The opposing trainer sent out" + OPokemon[0]);
                     }
                     else{
 
@@ -290,7 +294,7 @@ public class Main {
 
                             double num = damagecalc(currentmove, level, OPokemon[1], OPokemon[2], true, Pokemon, false);
                             num = Math.floor(num);
-                            ohp -= num;
+                            ohp -= (int) num;
                             TimeUnit.SECONDS.sleep(1);
 
                         }
@@ -845,23 +849,20 @@ public class Main {
     }
     public static int ingameHP(int base, int level){ //These methods are needed to convert base stats into usable stats
         double stat = 2*base;
-
-        stat +=32*level;
-        stat /=100;
-        stat = Math.floor(stat);
-        stat+= level+10;
-
-        int result = (int) stat;
-        return result;
+        stat += 52;
+        stat *= level;
+        stat/=100;
+        stat+=level;
+        stat+=10;
+        return (int)Math.floor(stat);
     }
     public static int ingamestat (int base, int level){
         double stat = 2*base;
-
-        stat +=32*level;
+        stat +=52;
+        stat*=level;
         stat /=100;
         stat+=5;
         stat = Math.floor(stat);
-
         int result = (int) stat;
         return result;
     }
@@ -915,13 +916,12 @@ public class Main {
         Random random = new Random();
         int accuracy = random.nextInt(100)+1;
         int HitChance = Integer.parseInt(move[4]);
-        if (accuracy>HitChance){
+        if (accuracy>HitChance&&AI==false){
             System.out.println("The move missed");
             return 0;
         }
 
         int power =  Integer.parseInt(move[3]);
-
         if (power==0){
             statuseffect(target, move );
             return 0;
@@ -956,7 +956,7 @@ public class Main {
         damage *= randomNumber;
 
         //Type chart
-        int typing = 1;
+        double typing = 1;
         typing *= weakness(move[1], DefendingType);
         typing *= weakness(move[1], SecondType);
         damage *= typing;
@@ -971,9 +971,9 @@ public class Main {
 
         //Critical hit
         random = new Random();
-        int ran = random.nextInt(24) + 1;
+        int ran = random.nextInt(12) + 1;
 
-        if (ran == 24){
+        if (ran == 12 && AI==false) {
             damage *= 1.5;
             System.out.println("It was a critical hit!");
         }
@@ -1179,6 +1179,30 @@ public class Main {
             else{
                 odef*=0.75;
                 System.out.println("The opposing Pokemons defense was dropped");
+            }
+        }
+        if (move[5].equals("BDEF")){ //this stands for boost users  defense stat
+
+            if(target==true){
+                def*=1.25;
+                System.out.println("Your pokemons defense was increased");
+            }
+
+            else{
+                odef*=1.25;
+                System.out.println("The opposing Pokemons defense was increased");
+            }
+        }
+        if (move[5].equals("BATK")){ //this stands for boost users  defense stat
+
+            if(target==true){
+                atk*=1.25;
+                System.out.println("Your pokemons attack was increased");
+            }
+
+            else{
+                oatk*=1.25;
+                System.out.println("The opposing Pokemons attack was increased");
             }
         }
     }
