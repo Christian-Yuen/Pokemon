@@ -1,0 +1,690 @@
+Blaze Kick
+Fire
+P
+85
+90
+DOT
+Fire Blast
+Fire
+S
+110
+85
+DOT
+Fire Punch
+Fire
+P
+75
+100
+DOT
+Flamethrower
+Fire
+S
+90
+100
+None
+Flare Blitz
+Fire
+P
+120
+100
+Recoil
+Heat Wave
+S
+Fire
+95
+90
+None
+Mystical Fire
+Fire
+S
+75
+100
+DOSPA
+Pyro Ball
+Fire
+P
+120
+90
+None
+Bitter Blade
+Fire
+P
+90
+100
+Heal
+Aqua Tail
+Water
+P
+90
+90
+None
+Hydro Pump
+Water
+S
+110
+80
+None
+Surf
+Water
+S
+90
+100
+None
+Water Shuriken
+Water
+S
+75
+100
+None
+Sparkling Aria
+Water
+S
+90
+100
+None
+Liquidation
+Water
+P
+85
+100
+DODEF
+Wave Crash
+Water
+P
+120
+100
+Recoil
+Water Pulse
+Water
+S
+60
+100
+DOT
+Surging Strikes
+Water
+P
+110
+100
+None
+Energy Ball
+Grass
+S
+90
+100
+None
+Giga Drain
+Grass
+S
+75
+100
+Heal
+Wood Hammer
+Grass
+P
+120
+100
+Recoil
+Power Whip
+Grass
+P
+120
+85
+None
+Leaf Storm
+Grass
+S
+130
+100
+DSPA
+Leaf Blade
+Grass
+P
+90
+100
+None
+Dual Wingbeat
+Flying
+P
+80
+90
+None
+Air Slash
+Flying
+S
+75
+95
+Flinch
+Brave Bird
+Flying
+P
+120
+100
+Recoil
+Facade
+Normal
+P
+70
+100
+None
+Extreme Speed
+Normal
+P
+80
+100
+None
+Boomburst
+Normal
+S
+140
+100
+None
+Body Slam
+Normal
+P
+85
+100
+Para
+Power Gem
+Rock
+S
+80
+100
+None
+Rock Slide
+Rock
+P
+75
+90
+Flinch
+Stone Edge
+Rock
+P
+100
+80
+None
+Ancient Power
+Rock
+S
+60
+100
+BSPA
+Drill Run
+Ground
+P
+80
+95
+None
+Earthquake
+Ground
+P
+100
+100
+None
+Earth Power
+Ground
+S
+90
+100
+DSPD
+High Horsepower
+Ground
+P
+95
+95
+None
+Scorching Sands
+Ground
+S
+70
+100
+DOT
+Bulldoze
+Ground
+P
+60
+100
+DOSPE
+Blizzard
+Ice
+S
+110
+70
+Freeze
+Freeze Dry
+Ice
+S
+70
+100
+Freeze
+Ice Beam
+Ice
+S
+90
+100
+Freeze
+Ice Hammer
+Ice
+P
+100
+90
+DOSPE
+Icicle Crash
+Ice
+P
+85
+90
+Flinch
+Icicle Spear
+Ice
+P
+75
+100
+None
+Triple Axel
+Ice
+P
+120
+70
+None
+Sludge Bomb
+Poison
+S
+90
+100
+DOT
+Sludge Wave
+Poison
+S
+95
+100
+DOT
+Gunk Shot
+Poison
+P
+120
+80
+DOT
+Poison Jab
+Poison
+P
+80
+100
+DOT
+Cross Poison
+Poison
+P
+70
+100
+DOT
+Dragon Claw
+Dragon
+P
+80
+100
+None
+Dragon Hammer
+Dragon
+P
+90
+100
+None
+Breaking Swipe
+Dragon
+P
+60
+100
+DOATK
+Draco Meteor
+Dragon
+S
+130
+90
+DSPA
+Dragon Pulse
+Dragon
+S
+85
+100
+None
+Dragon Rush
+Dragon
+P
+100
+75
+Flinch
+Dazzling Gleam
+Fairy
+S
+80
+100
+None
+Moonblast
+Fairy
+S
+90
+100
+None
+Spirit Break
+Fairy
+P
+75
+100
+DOSPA
+Play Rough
+Fairy
+P
+90
+90
+None
+Crunch
+Dark
+P
+80
+100
+None
+Dark Pulse
+Dark
+S
+80
+100
+Flinch
+Foul Play
+Dark
+P
+95
+100
+None
+Throat Chop
+Dark
+P
+80
+100
+None
+Night Slash
+Dark
+S
+70
+100
+None
+Darkest Lariat
+Dark
+P
+85
+100
+None
+Discharge
+Electric
+S
+80
+100
+Para
+Electro Web
+Electric
+S
+55
+100
+DOSPE
+Thunder
+Electric
+S
+110
+70
+Para
+Thunder Punch
+Electric
+P
+75
+100
+Para
+Thunderbolt
+Electric
+S
+90
+100
+Para
+Wild Charge
+Electric
+P
+90
+100
+Recoil
+Flash Cannon
+Steel
+S
+80
+100
+DOSPD
+Iron Head
+Steel
+P
+80
+100
+Flinch
+Iron Tail
+Steel
+P
+100
+75
+None
+Meteor Mash
+Steel
+P
+90
+90
+BATK
+Steel Wing
+Steel
+P
+70
+90
+BDEF
+Extrasensory
+Psychic
+S
+80
+100
+Flinch
+Psychic
+Psychic
+S
+90
+100
+DOSPD
+Psychic Fangs
+Psychic
+P
+85
+100
+None
+Psycho Cut
+Psychic
+P
+70
+100
+None
+Psyshock
+Psychic
+S
+80
+100
+None
+Zen Headbutt
+Psychic
+P
+80
+90
+Flinch
+Bug Buzz
+Bug
+S
+90
+100
+None
+X-Scissor
+Bug
+P
+80
+100
+None
+Pollen Puff
+Bug
+S
+90
+100
+None
+Lunge
+Bug
+P
+80
+100
+DOATK
+Aura Sphere
+Fighting
+S
+80
+100
+None
+Brick Break
+Fighting
+P
+75
+100
+None
+Close Combat
+Fighting
+P
+120
+100
+DDEF
+Cross Chop
+Fighting
+P
+100
+80
+None
+High Jump Kick
+Fighting
+P
+130
+90
+Recoil
+Hammer Arm
+Fighting
+P
+100
+90
+DATK
+Power Up Punch
+Fighting
+P
+25
+100
+BATK
+Focus Blast
+Fighting
+S
+120
+70
+None
+Sacred Sword
+Fighting
+P
+90
+100
+None
+Shadow Ball
+Ghost
+S
+80
+100
+DOSPD
+Poltergeist
+Ghost
+P
+110
+90
+None
+Shadow Claw
+Ghost
+P
+70
+100
+None
+Nasty Plot
+Dark
+Status
+0
+100
+BSPA
+Swords Dance
+Normal
+Status
+0
+100
+BATK
+Fake Tears
+Dark
+Status
+0
+100
+DOSPD
+Agility
+Psychic
+Status
+0
+100
+BSPE
+Leer
+Normal
+Status
+0
+100
+DOSPD
+Growl
+Normal
+Status
+0
+100
+DOATK
+Iron Defense
+Steel
+Status
+0
+100
+BDEF
+Will'o'Wisp
+Fire
+Status
+0
+100
+DOT
+Thunder Wave
+Electric
+Status
+0
+100
+Para
+Toxic
+Poison
+Status
+0
+100
+DOT
+Freezing Aura
+Ice
+Status
+0
+100
+Freeze
+Scary Face
+Normal
+Status
+0
+100
+DOSPE
+Tri attack
+Normal
+S
+80
+100
+DOT
