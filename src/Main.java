@@ -1,4 +1,3 @@
-import org.w3c.dom.ls.LSOutput;
 
 import java.io.FileNotFoundException;
 import java.util.Random;
@@ -20,8 +19,8 @@ public class Main {
     // The difference between atk and spa is that spa is distance mental attacks, while atk are more physical attacks.
     private static double spd = 0; //Similarly, SPD defends from special attacks, while DEF defends from physical attacks
     private static double spe = 0; //This is the speed stat, fastest goes first!
-    private static boolean DamageOverTime = false;
-    private static boolean Imobility = false;
+    private static boolean DamageOverTime = false; //This status will inflict damage over time
+    private static boolean Imobility = false; //This status has a chance of inhibiting a pokemon from moving
     private static boolean flinch = false; //The flinch status effect. If your opponent outspeeds you and flinches,
     // your move will be invalidated, and your turn is skipped.
 
@@ -38,7 +37,6 @@ public class Main {
 
     private static int x = 0; //This is used to help with damage calculations
     public static void main(String[] args) throws FileNotFoundException, InterruptedException { //The main method which will hold the actual battle
-        int movenumber = 1;
         int chances = 2;
         int rivalchances = 2;
         File moves = new File ("Database_Move");
@@ -114,7 +112,7 @@ public class Main {
                     random = new Random();
                     int randomnumber = random.nextInt(3)+1;
 
-                    if ((flinch!=true) || (Imobility == true && randomnumber == 1)|| (Imobility== false)){
+                    if ((!flinch) || (Imobility  && randomnumber == 1)|| (!Imobility)){
                         TimeUnit.SECONDS.sleep(1);
                         System.out.println(Pokemon[0] + " used " + currentmove[0]); //Effects like flinch and imobility effect the chances of your poekmon moving
 
@@ -172,7 +170,7 @@ public class Main {
                         random = new Random();
                         randomnumber = random.nextInt(3)+1;
 
-                        if ((Oflinch!=true) || (OImobility == true && randomnumber == 1)|| (OImobility== false)){
+                        if ((!Oflinch) || (OImobility && randomnumber == 1)|| (!OImobility)){
 
                             String [] Ocurrentmove = Omovelist[enemyAI(Omovelist, Pokemon, Olevel)];
 
@@ -228,7 +226,7 @@ public class Main {
                     random = new Random();
                     int randomnumber = random.nextInt(3)+1;
 
-                    if ((Oflinch!=true) || (OImobility == true && randomnumber == 1)|| (OImobility== false)){
+                    if ((!Oflinch) || (OImobility && randomnumber == 1)|| (!OImobility)){
 
                         String [] Ocurrentmove = Omovelist[enemyAI(Omovelist, Pokemon, Olevel)];
 
@@ -610,7 +608,7 @@ public class Main {
                     num++;
                 }
 
-            } else if (Pokemon[0].equals("Blaziken") || Pokemon[0].equals("Sneasler") || Pokemon.equals("Chestnaught")) {
+            } else if (Pokemon[0].equals("Blaziken") || Pokemon[0].equals("Sneasler") || Pokemon[0].equals("Chestnaught")) {
                 num = 606;
                 for (int i = 0; i < 6; i++) {
                     moves[3][i] = array[num];
@@ -726,7 +724,7 @@ public class Main {
 
         return moves;
     }
-    public static int Movetype (String[] Pokemon, int type, int store ){
+    public static int Movetype (String[] Pokemon, int type, int store ){ //Deciding move based on pokemons primary types
 
         String search = Pokemon[type];
         int x = 0;
@@ -923,7 +921,7 @@ public class Main {
 
         int power =  Integer.parseInt(move[3]);
         if (power==0){
-            statuseffect(target, move );
+            statuseffect(target, move, AI );
             return 0;
         }
 
@@ -962,7 +960,7 @@ public class Main {
         damage *= typing;
 
         if (typing >= 2 && AI==false){
-            System.out.println("It was super effective");
+            System.out.println("It was super effective!!");
         }
         else if (typing <= 0.5 && AI==false){
             System.out.println("It was not very effective");
@@ -985,13 +983,13 @@ public class Main {
 
         damage = Math.floor(damage);
         x = (int) damage;
-        statuseffect(target, move);
+        statuseffect(target, move, AI);
         return damage;
     }
     public static double weakness (String atype, String dtype){
         double result = 1;
 
-        /* Commented type is the attacking type mentioned is the attacking type */
+        // Commented type is the attacking type mentioned is the attacking type */
         /* Order of the types listed: Normal 0| Fire 1| Water 2| Electric 3| Grass 4| Ice 5| Fighting 6|
         Poison 7| Ground 8| Flying 9| Psychic 10| Bug 11| Rock 12| Ghost 13| Dragon 14| Dark 15| Steel 16| Fairy 17|
          */
@@ -1055,7 +1053,10 @@ public class Main {
         return result;
     }
 
-    public static void statuseffect (boolean target/*True is your attacking, false is opponent attacking*/, String[] move){
+    public static void statuseffect (boolean target/*True is your attacking, false is opponent attacking*/, String[] move, boolean AI){
+        if (AI==true){
+            return;
+        }
         Random random = new Random();
         int randomNumber = random.nextInt(100) + 1;
 
